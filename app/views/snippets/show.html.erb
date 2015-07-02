@@ -1,0 +1,9 @@
+<div class='container'>
+  <textarea class="form-control" disabled="true"> <%= @snippet.description%></textarea>
+  <div class="span9">
+    <% if @snippet.is_private? %>
+      <label>Share this</label>
+      <input class="form-control" value="<%= @snippet.share_url %>"></input>
+    <% end %>
+  </div>
+</div>

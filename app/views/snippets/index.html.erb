@@ -1,0 +1,36 @@
+
+
+<div class='container'>
+  <div class='span9 pull-right'>
+    <p >
+      <%= form_tag(root_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+        <div class="form-group">
+          <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search Snippets" %>
+          <%= submit_tag 'Search', class: 'btn btn-default'%>
+        </div>
+      <% end %>
+    </p>
+  </div>
+
+
+
+  <div class='container'>
+    <div class="row">
+      <%= link_to 'Create snippet', new_snippet_path, class: 'btn btn-default' %>
+      <div class='span9'>
+        <table class="table table-striped">
+          <tr>
+            <th></th>
+          </tr>
+          <% @snippets.each do |snippet|%>
+            <tr>
+              <td><a href="<%= snippet_path(snippet)%>"><%= truncate(snippet.description, length: 20)%></a></td>
+            </tr>
+          <% end %>
+
+        </table>
+        <%= paginate @snippets %>
+      </div>
+    </div>
+  </div>
+</div>

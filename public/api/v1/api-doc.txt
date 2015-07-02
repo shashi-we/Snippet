@@ -1,0 +1,18 @@
+API endpoint:
+http://localhost:3000/api/v1
+
+Notes:
+- Every listing function can be paginated using parameter 'page', for example: /snippets?page=1
+- You could set parameter 'per' to set number of items returned per page, for example /snippets?page=1&per=10
+
+##### Get all Sniipet #####
+GET /snippets.json
+retruns: All public snippet
+
+POST /snippets.json?
+params: snippet[description]
+params: snippet[is_private] if is_private is false it means snippet are public otherwise it is private snippet
+
+GET /snippet/[:id].json
+params: id
+

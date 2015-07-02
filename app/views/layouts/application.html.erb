@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Snippets</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='container'>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <a href='/'><h1>Snippets</h1></a>
+    </nav>
+    <div class='container' style='margin-top:100px;'>
+      <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>
