@@ -7,7 +7,7 @@ class SnippetsController < ApplicationController
       @snippets = Snippet.without_private_snippet.page params[:page]
     end
     respond_to do |format|
-      format.json
+      format.html
       format.json { render json: @snippets, status: 'success' }
     end
   end

@@ -12,6 +12,9 @@ describe Snippet do
     it 'returns public snippets' do
       expect(Snippet.without_private_snippet.count).to eq 5
     end
+    it 'returns private snippets' do
+      expect(Snippet.with_private_snippet.count).to eq 5
+    end
   end
 
   describe '#search' do

@@ -4,6 +4,7 @@ class Snippet < ActiveRecord::Base
   validates :description, presence: true
 
   scope :without_private_snippet, -> { where(is_private: false) }
+  scope :with_private_snippet, -> { where(is_private: true) }
 
   paginates_per 20
 
